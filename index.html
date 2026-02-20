@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XM Group - Strategic Brief</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+      .font-playfair { font-family: 'Playfair Display', serif; }
+      .font-montserrat { font-family: 'Montserrat', sans-serif; }
+      
+      body { 
+        background-color: #0a0a0a; 
+        margin: 0;
+        overflow-x: hidden;
+      }
+      
+      /* Hide scrollbar for the presentation feel */
+      ::-webkit-scrollbar { display: none; }
+      
+      @keyframes reveal-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes slide-in-right {
+        from { opacity: 0; transform: translateX(30px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      @keyframes scale-in {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+
+      .animate-reveal { animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+      .animate-slide-right { animation: slide-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+      .animate-scale { animation: scale-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+      
+      .stagger-1 { animation-delay: 100ms; opacity: 0; }
+      .stagger-2 { animation-delay: 200ms; opacity: 0; }
+      .stagger-3 { animation-delay: 300ms; opacity: 0; }
+      .stagger-4 { animation-delay: 400ms; opacity: 0; }
+      .stagger-5 { animation-delay: 500ms; opacity: 0; }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .bg-animate {
+        background: linear-gradient(-45deg, #0a0a0a, #1a0a2a, #0a0a0a, #0d0d0d);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      /* FINAL BOSS PRINT OPTIMIZATION */
+      @media print {
+        @page {
+          size: A4 portrait;
+          margin: 0;
+        }
+        
+        /* Force everything to be visible and un-constrained */
+        html, body, #root, [data-reactroot] {
+          background-color: #ffffff !important;
+          background-image: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: visible !important;
+          height: auto !important;
+          width: 100% !important;
+          display: block !important;
+          position: static !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        .no-print {
+          display: none !important;
+          visibility: hidden !important;
+          height: 0 !important;
+          width: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        /* The container should be the only visible top-level child */
+        .pdf-container {
+          box-shadow: none !important;
+          border-radius: 0 !important;
+          width: 100% !important;
+          min-height: 100vh !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          display: flex !important;
+          flex-direction: column !important;
+          background: white !important;
+          border: none !important;
+          position: relative !important;
+          transform: none !important;
+          animation: none !important;
+        }
+
+        /* Essential color forcing */
+        .bg-\[\#2D0A45\] { background-color: #2D0A45 !important; }
+        .bg-gray-50 { background-color: #f9fafb !important; }
+        .text-white { color: #ffffff !important; }
+        .text-\[\#2D0A45\] { color: #2D0A45 !important; }
+        
+        /* Remove all transitions/animations for clean capture */
+        * {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+    </style>
+
+  <link rel="stylesheet" href="/index.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4"
+      }
+    }
+    </script>
+  <script type="module" crossorigin src="/assets/index-DwpDcWjM.js"></script>
+</head>
+  <body class="bg-animate">
+    <div id="root"></div>
+</body>
+</html>
